@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     margin: 0;
@@ -9,7 +15,7 @@
     scroll-behavior: smooth;
 }
 
-/* header {
+header {
     background-color: #fefefe;
     width: 100%;
     position: fixed;
@@ -17,77 +23,71 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 100px;
+    padding: 10px 0px;
+    
 }
 
-.logo{    font-weight: 600;
-    font-size: 1.4em;
+.logo {    
+    font-weight: 600;
+    font-size: 22px;
 }
 
-.navigation a{
+.navigation a {
     text-decoration: none;
     color: #242424;
     font-weight: 400;
-    font-size: 1em;
-    padding-left: 30px;
+    font-size: 16px;
+    /*padding-left: 30px;*/
 }
 
-.navigation a:hover{
+.navigation a:hover {
     color: #af9aed;
     font-weight: 500;
-    eb7fdd
 }
-
-
-.main {
-    padding: 0;
-    margin: 0;
-  }
-*/
 
 .navbar {
     width: 100%;
     padding: 0px 100px;
-    margin: 0px 0px;
+    margin: 0px;
     display: flex;
     justify-content: space-between;
-    /* align-items: center;*/
+    align-items: center;
     box-sizing: border-box;
 }
-  
+
 .navbar .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight:600;
     color: #DEA3E1;
     text-decoration: none;
 }
-  
+
 .navbar .navigation a {
     margin-left: 20px;
-    font-size: 1em;
+    font-size: 15px;
     color: #242424;
     text-decoration: none;
     transition: color 0.3s;
 }
-  
+
 .navbar .navigation a:hover {
     color: #eb7fdd;
 }
-  
 
 section {
     padding: 80px 100px;
     border-radius: 0px 0px 100px 100px;
 }
 
+/* SECTION 1 - INTRO */
 .main {
     width: 100%;
-    min-height: 93vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url(images/watercolor\ paper.jpg);
+    background: url(assets/images/watercolor\ paper.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
@@ -100,27 +100,26 @@ section {
     justify-content: center;
     align-items: center;
     margin-bottom: 70px;
-  }
-  
-  .profile-image {
-    width: 140px;
-    height: 140px;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
     border: 4px solid #ffffff;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-image img {
+}
+
+.profile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
+}
 
 .main h2 {
     color: #242424;
-    font-size: 1.3em;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -128,15 +127,14 @@ section {
     display: inline-block;
     margin-top: 10px;
     color: #eb7fdd;
-    font-size: 1.9em;
+    font-size: 27px;
     font-weight: 600;
 }
 
-.main h3{
+.main h3 {
     color: #242424;
-    font-size: 1.3em;
+    font-size: 18px;
     font-weight: 500;
-    initial-letter: 1px;
     margin-top: 10px;
     margin-bottom: 30px;
 }
@@ -145,10 +143,10 @@ section {
     color: #ffffff;
     background-color: #eb7fdd;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 16px;
     font-weight: 600;
     display: inline-block;
-    padding: 0.9em 1.5em;
+    padding: 14px 24px;
     letter-spacing: 0.7px;
     border-radius: 12px;
     margin-bottom: 40px;
@@ -157,88 +155,60 @@ section {
 
 .main-botton:hover {
     background-color: #af9aed;
-    transform: scale(1.02);
-
+    transform: scale(1.05);
 }
 
 
-/*
-.linkedin-link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: #ffffff;
-    gap: 10px;
-  }
-  
-  .linkedin-link i {
-    font-size: 24px;
-    color: #0A66C2;
-    transition: color 0.5s ease-in-out; 
-  }
-  
-  .linkedin-link span {
-    font-size: 14px;
-    font-weight: 400;
-    color: #242424;
-    transition: text-decoration 0.3s ease-in-out;
-  }
-  
-  .linkedin-link:hover span {
-    text-decoration: underline;
-  }
-  
-  .linkedin-link:hover i {
-    color: #084594;
-  }
-*/
-
+/* SECTION 2 - SERVICES / CARDS */
 .cards {
-    min-height: 75vh;
+    height: 100%;
     align-items: center;
     justify-content: center;
+    /* You can add a background-color here if needed */
+    /* background-color: #fdf6fd; */
 }
-  .title {
+
+.title {
     display: flex;
     justify-content: center;
     color: #eb7fdd;
-    font-size: 2em;
+    font-size: 32px;
     font-weight: 600;
     margin-bottom: 30px;
-  }
+}
 
-  .content {
+.content {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-  }
+}
 
-  .card {
+.card {
     background-color: #ffffff;
-    width: 21.25em;
-    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
-    border-radius: 10px;
+    width: 340px;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.15);
+    border-radius: 20px;
     padding: 25px;
     margin: 15px;
-    transition: transform 0.4s ease-in-out; /* 👈 move this here */
-  }
+    transition: transform 0.4s ease-in-out;
+}
 
-  .card:hover {
+.card:hover {
     transform: scale(1.04);
-  }
+}
 
-  .icon {
+.icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px; /* space between icon and text if needed */
-  }
-  
-  .icon i {
+    margin-bottom: 15px;
+}
+
+.icon i {
     font-size: 80px;
     color: #eb7fdd;
-  }
+}
 
 .info {
     text-align: center;
@@ -246,31 +216,31 @@ section {
 
 .info h3 {
     color: #eb7fdd;
-    font-size: 1.2 em;
+    font-size: 19px;
     font-weight: 700;
     margin: 10px;
 }
 
+/* SECTION 3 - PROJECTS */
 .projects {
     width: 100%;
-    min-height: 93vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url(images/watercolor\ paper.jpg);
+    background: url(assets/images/watercolor\ paper.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
     text-align: center;
-    border-radius: 100px 100px 100px 100px;
+    border-radius: 0 0 100px 100px;
 }
 
 .Top {
-    font-size: 2em;
+    font-size: 32px;
     font-weight: 600;
     text-align: center;
     margin-bottom: 30px;
     color: #eb7fdd;
-  }
-  
+}
