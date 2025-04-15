@@ -199,6 +199,8 @@ section {
 
 .card:hover {
     transform: scale(1.04);
+    color:#af9aed
+
 }
 
 .icon {
