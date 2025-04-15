@@ -17,8 +17,8 @@
             <a href="#contact me">Contact me</a>
         </nav>
     </header> -->
-
-    <header>
+      
+    <!-- <header>
       <div class="navbar">
         <a href="#" class="logo">Rawan Baabdullah</a>
         <nav class="navigation">
@@ -28,32 +28,39 @@
         </nav>
       </div>
     </header>
+  -->
 
-    <section class="main"> 
-          </div>
+  <header class="top-header">
+    <div class="left-header">
+      <h1 class="logo">Rawan Baabdullah</h1>
+      <span class="email">rawankhaledba@gmail.com</span>
+      <button onclick="copyEmail()">Copy</button>
+      <a href="assets/Rawan-CV.pdf" target="_blank" class="cv-btn">CV</a>
+    </div>
+  
+    <div class="right-header">
+      <a href="#services">Services</a>
+      <span>/</span>
+      <a href="#projects">Projects</a>
+      <span>/</span>
+      <a href="https://www.linkedin.com/in/rawanbaabdullah" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+  
+  
+  <section class="main">
+    <div class="profile-wrapper">
+        <div class="profile-image">
+            <img src="assets/images/Rawan's-Profile-Picture.jpg" alt="Rawan's Profile Photo">
         </div>
-        <div class="profile-wrapper">
-            <div class="profile-image">
-                <img src="assets/images/Rawan's-Profile-Picture.jpg" alt="Rawan's Profile Photo">
-            </div>
-          </div>
-        
-        <div>
-          <h2>Hello, I am Rawan<br><span>UI/ UX Designer</span></h2>
-          <h3>I design websites and mobile apps</h3>
-          <a href="Projects" class="main-botton">View my recent projects</a>
-
-          <!-- 
-          <div class="social-icons"> 
-            <a href="#" class="linkedin-link" target="_blank">
-              <i class="fab fa-linkedin"></i>
-              <span>Reach out to me through my LinkedIn profile</span>
-            </a>                  
-          </div> 
-          -->
-        </div>
-
-      </section>
+    </div>
+    
+    <div>
+        <h2>Hello, I am Rawan<br><span>UI/ UX Designer</span></h2>
+        <h3>I design websites and mobile apps</h3>
+        <a href="#projects" class="main-botton">View my recent projects</a>
+    </div>
+</section>
       
 
 <section class="cards" id="services">
@@ -93,9 +100,33 @@
     </div>
 </section>
 
-<section class="projects" id="Projects">
+<section class="projects" id="projects">
 <h2 class="Top">Top projects I worked on</h2>
 </section>
 <script src="script/header-scroll.js"></script>
+<script>
+  function copyEmail() {
+    navigator.clipboard.writeText("rawankhaledba@gmail.com")
+      .then(() => alert("Email copied to clipboard!"))
+      .catch(err => alert("Failed to copy email"));
+  }
+
+  // Smooth Scroll to Services and Stop at the Center of the Screen
+  document.getElementById('servicesLink').addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default anchor behavior
+
+    const servicesSection = document.getElementById('services');
+    const sectionOffset = servicesSection.offsetTop;
+    const windowHeight = window.innerHeight;
+
+    // Calculate where the services section should be centered (middle of the screen)
+    const scrollToPosition = sectionOffset - (windowHeight / 2) + (servicesSection.offsetHeight / 2);
+
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: 'smooth'
+    });
+  });
+</script>
 </body>
 </html>

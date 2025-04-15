@@ -15,7 +15,7 @@ html, body {
     scroll-behavior: smooth;
 }
 
-header {
+/*header {
     background-color: #fefefe;
     width: 100%;
     position: fixed;
@@ -37,7 +37,7 @@ header {
     color: #242424;
     font-weight: 400;
     font-size: 16px;
-    /*padding-left: 30px;*/
+    /*padding-left: 30px;
 }
 
 .navigation a:hover {
@@ -74,6 +74,90 @@ header {
     color: #eb7fdd;
 }
 
+*/
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: transparent; /* Transparent background */
+    font-family: Arial, sans-serif;
+    border-radius: 14px;
+    font-weight: 300;
+  }
+  
+  
+  .left-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .left-header .email {
+    background-color: transparent;
+    padding: 10px 15px;
+    /*border-radius: 20px;
+    border: 1px solid #e0e0e0;*/
+    font-size: 12px;
+    font-weight: 300;
+  }
+  
+  .left-header button,
+  .cv-btn {
+    padding: 7px 7px;
+    width: 80px;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    color: #242424;
+  }
+  
+  .left-header button:hover,
+  .cv-btn:hover {
+    background-color: #af9aed;
+    font-weight: 400;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .right-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .right-header a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .right-header span {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .right-header a:hover {
+    text-decoration: none;
+    color: #af9aed;
+    font-weight: 400;
+  }
+  
+  /*.right-header span:hover {
+    text-decoration: none;
+    color: #af9aed;
+    font-weight: 400;
+  }*/
+
 section {
     padding: 80px 100px;
     border-radius: 0px 0px 100px 100px;
@@ -82,7 +166,7 @@ section {
 /* SECTION 1 - INTRO */
 .main {
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,15 +243,28 @@ section {
 }
 
 
-/* SECTION 2 - SERVICES / CARDS */
+.services-section {
+    position: relative; /* Make sure this section is properly positioned */
+    min-height: 100vh; /* Make sure it takes up at least the full screen height */
+  }
+  
+  .sticky-services {
+    position: sticky;
+    top: 50%;  /* This makes it stick to the middle of the screen when scrolled */
+    transform: translateY(-50%); /* Center the element vertically */
+    z-index: 10;  /* Optional, for layering purposes */
+  }
+
+
 .cards {
-    height: 100%;
-    max-width: 1200px;
+    /*min-height: 400px;*/
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 100px 20px;
     align-items: center;
     justify-content: center;
-    display:inline;
-    /* You can add a background-color here if needed */
+    display: flex; /* Change from inline to flex */
+    flex-wrap: wrap; /* Allows the cards to wrap */
     /* background-color: #fdf6fd; */
 }
 
@@ -178,6 +275,7 @@ section {
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 30px;
+    padding-right: 70px;
 }
 
 .content {
@@ -192,15 +290,13 @@ section {
     width: 300px;
     box-shadow: 0 5px 25px rgba(1, 1, 1, 0.15);
     border-radius: 20px;
-    padding: 25px;
+    padding: 20px;
     margin: 15px;
     transition: transform 0.4s ease-in-out;
 }
 
 .card:hover {
     transform: scale(1.04);
-    color:#af9aed
-
 }
 
 .icon {
@@ -217,13 +313,15 @@ section {
 
 .info {
     text-align: center;
+    font-weight: 300;
 }
 
 .info h3 {
     color: #eb7fdd;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 700;
     margin: 10px;
+    width: auto;
 }
 
 /* SECTION 3 - PROJECTS */
