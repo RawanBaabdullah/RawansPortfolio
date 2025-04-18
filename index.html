@@ -47,7 +47,7 @@
     </div>
   </header>
   
-  
+  <!--Hero Section-->
   <section class="main">
     <div class="profile-wrapper">
         <div class="profile-image">
@@ -62,8 +62,8 @@
     </div>
 </section>
       
-
-<section class="cards" id="services">
+<!--Services Section-->
+<!--<section class="cards" id="services">
     <h2 class="title">Services</h2>
     <div class="content">
         <div class="card">
@@ -99,7 +99,8 @@
 
     </div>
 </section>
-
+-->
+<!--Projects Section-->
 <section class="projects-section">
   <h2>My Projects</h2>
   <div class="projects-grid">
@@ -138,6 +139,7 @@
   </div>
 </section>
 
+<!--About Section-->
 <section class="about-section">
   <div class="about-container">
     <div class="about-text">
@@ -156,6 +158,7 @@
   </div>
 </section>
 
+<!--Technical Skills-->
 <section class="technical-section" id="technical">
   <div class="technical-container">
     <h2>Bonus: Technical Features</h2>
@@ -164,17 +167,64 @@
     <div class="tech-grid">
       <div class="tech-item">HTML5</div>
       <div class="tech-item">CSS3</div>
-      <div class="tech-item">JavaScript</div>
       <div class="tech-item">Figma</div>
       <div class="tech-item">Power Apps</div>
       <div class="tech-item">SharePoint</div>
       <div class="tech-item">Power BI</div>
       <div class="tech-item">Responsive Design</div>
       <div class="tech-item">Low-code/No-code</div>
+      <div class="tech-item">Power Query</div>
+      <div class="tech-item">DAX</div>
+      <div class="tech-item">Power Automate</div>
+      <div class="tech-item">JRIA</div>
     </div>
   </div>
 </section>
 
+<!--Co-workers Recommendations-->
+<section class="testimonials-section" id="testimonials">
+  <div class="testimonials-container">
+    <h2>Workplace Endorsements</h2>
+    <p class="testimonials-intro">What people say about working with me:</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Mashallah rawan you have been amazing since the start, small tweaks or advices doesnt count to how intelligent you are and professional, keep up the hard work and wishing you the best in your career inshallah🙏🏼👌🏽”</p>
+        <div class="testimonial-author">
+          <img src="assets/images/HA.png" alt="Client Photo">
+          <div>
+            <p class="author-name">Hesham Amoudi</p>
+            <p class="author-title">Business Application Specialist, Jeddah Airports</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Rawan, your words are truly inspiring! 🌟 I'm so grateful to be part of this wonderful team. Every day spent with you and the team is an opportunity to grow and learn together. 💪 Here’s to an amazing year ahead filled with success and collaboration! 🚀.”</p>
+        <div class="testimonial-author">
+          <img src="assets/images/NA.png" alt="Client Photo">
+          <div>
+            <p class="author-name">Nadia Almarashi</p>
+            <p class="author-title">Application Developer, Jeddah Airports</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">“We are so happy to have you as part of our amazing team💛, Rawan! We wish you a very Happy New Year filled with more success!”</p>
+        <div class="testimonial-author">
+          <img src="assets/images/MA.png" alt="Client Photo">
+          <div>
+            <p class="author-name">Malak Alzahrani</p>
+            <p class="author-title">Business Application Specialist, Jeddah Airport</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Contact Section-->
 <section class="contact-section" id="contact">
   <div class="contact-container">
     <h2>Contact Me</h2>
@@ -188,12 +238,49 @@
     </form>
 
     <div class="contact-info">
-      <p><strong>Email:</strong> yourname@example.com</p>
-      <p><strong>Phone:</strong> +123 456 7890</p>
-      <p><strong>Location:</strong> Your City, Country</p>
+      <p><strong>Email:</strong> rawankhaledba@gmail.com</p>
+      <p><strong>Phone:</strong> +966 54 090 0962</p>
+      <p><strong>Location:</strong> Jeddah, Saudi Arabia</p>
     </div>
   </div>
 </section>
+
+<!--Footer-->
+<footer class="footer">
+  <p>&copy; 2025 Rawan Baabdullah. All Rights Reserved.</p>
+</footer>
+
+<!--Scripts Section-->
+
+<!--Popper Effect-->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  const section = document.getElementById('testimonials');
+  
+  function launchConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 170,
+      origin: { y: 0.6 }
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          launchConfetti();
+        }
+      });
+    },
+    {
+      threshold: [0.9] // Trigger when 90% of the section is visible
+    }
+  );
+
+  observer.observe(section);
+</script>
+
 
 <script src="script/header-scroll.js"></script>
 <script>

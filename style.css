@@ -243,29 +243,27 @@ section {
 }
 
 
-.services-section {
-    position: relative; /* Make sure this section is properly positioned */
-    min-height: 100vh; /* Make sure it takes up at least the full screen height */
+/*.services-section {
+    position: relative; 
+    min-height: 100vh; 
   }
   
   .sticky-services {
     position: sticky;
-    top: 50%;  /* This makes it stick to the middle of the screen when scrolled */
-    transform: translateY(-50%); /* Center the element vertically */
-    z-index: 10;  /* Optional, for layering purposes */
+    top: 50%;  
+    transform: translateY(-50%); 
+    z-index: 10; 
   }
 
 
 .cards {
-    /*min-height: 400px;*/
     max-width: 1280px;
     margin: 0 auto;
     padding: 100px 20px;
     align-items: center;
     justify-content: center;
-    display: flex; /* Change from inline to flex */
-    flex-wrap: wrap; /* Allows the cards to wrap */
-    /* background-color: #fdf6fd; */
+    display: flex; 
+    flex-wrap: wrap; 
 }
 
 .title {
@@ -323,7 +321,7 @@ section {
     margin: 10px;
     width: auto;
 }
-
+*/
 /* SECTION 3 - PROJECTS */
 /*
 .projects {
@@ -472,8 +470,14 @@ section {
     border: 4px solid #ffffff; /* optional: adds a light frame */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* optional: soft shadow */
     margin-left: 200px;
+    transition: 0.7s ease;
   }
   
+  .about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 30px rgb(175, 154, 237, 0.8); /* optional: soft shadow */
+}
+
   /*Contact Section*/
 
   .contact-section {
@@ -580,5 +584,101 @@ section {
   .tech-item:hover {
     transform: translateY(-5px);
     background-color: #e6e6e6;
+  }
+  
+  /* What people say about working with me*/
+
+  .testimonials-section {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+  }
+  
+  .testimonials-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .testimonials-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .testimonials-intro {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  .testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .testimonial-card {
+    background-color: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  }
+  
+  .testimonial-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 40px rgba(175, 154, 237, 0.4);
+  }
+  
+  .testimonial-text {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .author-name {
+    font-weight: 600;
+    margin-bottom: 3px;
+    font-size: 14px;
+  }
+  
+  .author-title {
+    font-size: 13px;
+    color: #777;
+  }
+  
+  /*Footer*/
+  .footer {
+    background-color: #D417BC;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 12px;
   }
   
