@@ -33,16 +33,16 @@
   <header class="top-header">
     <div class="left-header">
       <a href="#" class="logo" style="color: #D417BC; font-size: 18px; font-weight: 600; text-decoration: none;">Rawan Baabdullah</a>
-      <span class="email">rawankhaledba@gmail.com</span>
+      <!--<span class="email">rawankhaledba@gmail.com</span>
       <button onclick="copyEmail()">Copy</button>
-      <a href="assets/Rawan-CV.pdf" target="_blank" class="cv-btn">CV</a>
+      <a href="assets/Rawan-CV.pdf" target="_blank" class="cv-btn">CV</a>-->
     </div>
   
     <div class="right-header">
-      <a href="#services">Services</a>
+      <!--<a href="#services">Services</a>
       <span>/</span>
       <a href="#projects">Projects</a>
-      <span>/</span>
+      <span>/</span>-->
       <a href="https://sa.linkedin.com/in/rawanbaabdullah?trk=public_profile_samename-profile" target="_blank">LinkedIn</a>
     </div>
   </header>
@@ -102,42 +102,45 @@
 -->
 <!--Projects Section-->
 <section class="projects-section">
-  <h2>My Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-image">
-        <img src="assets/images/La La Land Hero.png" alt="Project 1">
+  <div class="container">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/La La Land Hero.png" alt="Project 1">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">La La Land Airport Mobile App</h3>
+          <p class="project-description">A user-friendly app to plan and track your travel itinerary with real-time weather updates.</p>
+          <p class="project-tags">UI/UX • Mobile App • Figma</p>
+        </div>
       </div>
-      <div class="project-content">
-        <h3 class="project-title">La La Land Airport Mobile App</h3>
-        <p class="project-description">A user-friendly app to plan and track your travel itinerary with real-time weather updates.</p>
-        <p class="project-tags">UI/UX • Mobile App • Figma</p>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-image">
-        <img src="project2.jpg" alt="Project 2">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="project2.jpg" alt="Project 2">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">KAIA Website</h3>
+          <p class="project-description">A sleek, responsive personal portfolio built using HTML, CSS, and JavaScript.</p>
+          <p class="project-tags">Web Design • Frontend • HTML/CSS</p>
+        </div>
       </div>
-      <div class="project-content">
-        <h3 class="project-title">KAIA Website</h3>
-        <p class="project-description">A sleek, responsive personal portfolio built using HTML, CSS, and JavaScript.</p>
-        <p class="project-tags">Web Design • Frontend • HTML/CSS</p>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-image">
-        <img src="project3.jpg" alt="Project 3">
-      </div>
-      <div class="project-content">
-        <h3 class="project-title">Employee Internal Portal</h3>
-        <p class="project-description">An interactive dashboard for tracking customer data, activities, and insights.</p>
-        <p class="project-tags">UI Design • Dashboard • Figma</p>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="project3.jpg" alt="Project 3">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Employee Internal Portal</h3>
+          <p class="project-description">An interactive dashboard for tracking customer data, activities, and insights.</p>
+          <p class="project-tags">UI Design • Dashboard • Figma</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <!--About Section-->
 <section class="about-section">
@@ -151,6 +154,14 @@
         I've worked on mobile apps, web platforms, and internal dashboards. My toolkit includes Figma, Adobe XD, and low-code tools like Power Apps.
       </p>
       <p class="about-tags">UI/UX • Design Systems • Mobile Apps • Web Design • Prototyping</p>
+      <button onclick="copyEmail()" class="icon-button">
+        <i class="fa-regular fa-paper-plane" style="margin-right: 7px;"></i>
+        Email me
+      </button>                 
+      <a href="assets/Files/Rawan Baabdullah CV.pdf" target="_blank" class="cv-btn">
+        <i class="fa-regular fa-file-alt" style="margin-right: 10px;"></i>
+        CV
+    </a>              
     </div>
     <div class="about-image">
       <img src="assets/images//Rawan's-Profile-Picture.jpg" alt="About Me">
@@ -281,7 +292,10 @@
   observer.observe(section);
 </script>
 
-
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace()
+</script>
 <script src="script/header-scroll.js"></script>
 <script>
   function copyEmail() {

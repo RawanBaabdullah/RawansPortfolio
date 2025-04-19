@@ -76,6 +76,8 @@ html, body {
 
 */
 
+/* HEADER */
+
 .top-header {
     display: flex;
     justify-content: space-between;
@@ -84,7 +86,6 @@ html, body {
     background-color: transparent; /* Transparent background */
     font-family: Arial, sans-serif;
     border-radius: 14px;
-    font-weight: 300;
   }
   
   
@@ -94,11 +95,11 @@ html, body {
     gap: 10px;
   }
   
-  .left-header .email {
+  /*.left-header .email {
     background-color: transparent;
     padding: 10px 15px;
     /*border-radius: 20px;
-    border: 1px solid #e0e0e0;*/
+    border: 1px solid #e0e0e0;
     font-size: 12px;
     font-weight: 300;
   }
@@ -126,7 +127,7 @@ html, body {
     font-weight: 400;
     color: #ffffff;
     border: none;
-  }
+  }*/
   
   .right-header {
     display: flex;
@@ -137,8 +138,10 @@ html, body {
   .right-header a {
     text-decoration: none;
     color: black;
-    font-size: 12px;
+    font-size: 14px;
     transition: 0.3s ease-in-out;
+    letter-spacing: 0.4px;
+    transition: 0.5s ease;
   }
   
   .right-header span {
@@ -149,7 +152,6 @@ html, body {
   .right-header a:hover {
     text-decoration: none;
     color: #af9aed;
-    font-weight: 400;
   }
   
   /*.right-header span:hover {
@@ -158,25 +160,21 @@ html, body {
     font-weight: 400;
   }*/
 
-section {
-    padding: 80px 100px;
-    border-radius: 0px 0px 100px 100px;
-}
-
-/* SECTION 1 - INTRO */
+/* HERO */
 .main {
     width: 100%;
-    height: 90%;
+    height: 93%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url(assets/images/watercolor-paper.jpg);
+    background: #fff6fe;
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
     text-align: center;
     padding: 0px 10px;
+    border-radius: 0 0 100px 100px;
 }
 
 .profile-wrapper {
@@ -356,11 +354,16 @@ section {
     background: #f7f7f7;
   }*/
   
-  .projects-section {
+  .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px;
   }
+  
+  .projects-section {
+    padding: 60px 0;
+    background: #f5f5f5;
+  }
+  
   
   .projects-section h2 {
     text-align: center;
@@ -381,11 +384,12 @@ section {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
   .project-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 4px 40px rgba(175, 154, 237, 0.4);
   }
   
   .project-image img {
@@ -419,8 +423,8 @@ section {
   /*About Me Section*/
 
   .about-section {
-    background-color: #ffffff;
-    padding: 80px 20px;
+    background: #f5f5f5;
+    padding: 80px 0px;
   }
   
   .about-container {
@@ -439,7 +443,7 @@ section {
   
   .about-text h2 {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #D417BC;
   }
   
@@ -469,7 +473,7 @@ section {
     border-radius: 50%;
     border: 4px solid #ffffff; /* optional: adds a light frame */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* optional: soft shadow */
-    margin-left: 200px;
+    margin-left: 310px;
     transition: 0.7s ease;
   }
   
@@ -478,10 +482,56 @@ section {
     box-shadow: 0 4px 30px rgb(175, 154, 237, 0.8); /* optional: soft shadow */
 }
 
+.about-section .about-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .about-section .about-text button,
+  .about-section .about-text .cv-btn {
+    padding: 10px 20px;
+    margin: 35px 15px 5px 0px;
+    /*width: 150px;*/
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    background-color: #eb7fdd;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.7s ease;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block; /* 🔥 this makes transform work on <a> too */
+  }
+  
+  
+  .about-section .about-text button:hover,
+  .about-section .about-text .cv-btn:hover {
+    background-color: #af9aed;
+    color: #ffffff;
+    border: none;
+    transform: scale(1.05);
+  }
+  
+  .icon-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: #D417BC;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }  
+
   /*Contact Section*/
 
   .contact-section {
-    background-color: #f8f8f8;
+    background-color: #fff6fe;
     padding: 80px 20px;
   }
   
@@ -493,7 +543,7 @@ section {
   
   .contact-section h2 {
     font-size: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: #D417BC;
   }
   
@@ -543,7 +593,7 @@ section {
   /*Bonus: Technical Features*/
 
   .technical-section {
-    background-color: #fff;
+    background-color: #fff6fe;
     padding: 80px 20px;
   }
   
@@ -555,7 +605,8 @@ section {
   
   .technical-section h2 {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    color: #D417BC;
   }
   
   .technical-intro {
@@ -573,23 +624,23 @@ section {
   
   .tech-item {
     padding: 12px 20px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     border-radius: 10px;
     font-size: 14px;
     color: #333;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
   .tech-item:hover {
     transform: translateY(-5px);
-    background-color: #e6e6e6;
+    box-shadow: 0 4px 40px rgba(149, 13, 132, 0.4);
   }
   
   /* What people say about working with me*/
 
   .testimonials-section {
-    background-color: #f9f9f9;
+    background: #f5f5f5;
     padding: 80px 20px;
   }
   
@@ -601,7 +652,7 @@ section {
   
   .testimonials-section h2 {
     font-size: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   
   .testimonials-intro {
@@ -627,12 +678,13 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
   .testimonial-card:hover {
     transform: scale(1.04);
-    box-shadow: 0 4px 40px rgba(175, 154, 237, 0.4);
+    /*box-shadow: 0 4px 40px rgba(175, 154, 237, 0.4);*/
+    box-shadow: 0 4px 40px rgba(122, 140, 217, 0.4);
   }
   
   .testimonial-text {
