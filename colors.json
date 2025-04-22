@@ -1,7 +1,7 @@
 {
-    "primary": "#DEA3E1",
-    "secondary": "#eb7fdd",
-    "accent": "#af9aed",
+    "primary": "#eb7fdd",
+    "secondary": "#af9aed", /*Use for buttons, hovers, underlines... etc.*/
+    "accent": "#DEA3E1",
     "background": "#fffaf7",
     "text": "#242424"
   }

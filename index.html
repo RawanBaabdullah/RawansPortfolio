@@ -7,8 +7,51 @@
     <link rel="stylesheet" href="style.css">
     <title>Rawan Baabdullah's Portfolio</title>
 </head>
+
+<header class="top-header" style="position: fixed; top: 0; left: 0; width: 100%;">
+  <div class="left-header">
+    <a href="#" class="logo" style="color: #D417BC; font-size: 18px; font-weight: 600; text-decoration: none;">Rawan Baabdullah</a>
+    <!--<span class="email">rawankhaledba@gmail.com</span>
+    <button onclick="copyEmail()">Copy</button>
+    <a href="assets/Rawan-CV.pdf" target="_blank" class="cv-btn">CV</a>-->
+  </div>
+
+  <div class="right-header">
+    <!--<a href="#services">Services</a>
+    <span>/</span>
+    <a href="#projects">Projects</a>
+    <span>/</span>-->
+    <a href="https://sa.linkedin.com/in/rawanbaabdullah?trk=public_profile_samename-profile" target="_blank">LinkedIn</a>
+  </div>
+</header>
+
 <body>
-    
+  <div class="animated-background">
+    <div class="gradient-circle circle-1"></div>
+    <div class="gradient-circle circle-2"></div>
+    <div class="gradient-circle circle-3"></div>
+</div>
+<div class="bg">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="bubble b5"></div>
+    <div class="bubble b6"></div>
+    <div class="bubble b7"></div>
+</div>
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const scrollPercentage = scrollTop / (document.documentElement.scrollHeight - window.innerHeight);
+            
+            // Handle all animations in a single scroll listener
+            document.querySelectorAll('.gradient-circle, .bubble').forEach(element => {
+                element.style.animationPlayState = 'running';
+                element.style.animationDirection = 'normal';
+            });
+        });
+    </script>
     <!-- <header>
         <a href="#" class="logo">Rawan Baabdullah</a>
         <nav class="navigation">
@@ -17,8 +60,8 @@
             <a href="#contact me">Contact me</a>
         </nav>
     </header> -->
-
-    <header>
+      
+    <!-- <header>
       <div class="navbar">
         <a href="#" class="logo">Rawan Baabdullah</a>
         <nav class="navigation">
@@ -28,35 +71,25 @@
         </nav>
       </div>
     </header>
-
-    <section class="main"> 
-          </div>
+  -->
+  
+  <!--Hero Section-->
+  <section class="main">
+    <div class="profile-wrapper">
+        <div class="profile-image">
+            <img src="assets/images/Rawan's-Profile-Picture.jpg" alt="Rawan's Profile Photo">
         </div>
-        <div class="profile-wrapper">
-            <div class="profile-image">
-                <img src="assets/images/Rawan's-Profile-Picture.jpg" alt="Rawan's Profile Photo">
-            </div>
-          </div>
-        
-        <div>
-          <h2>Hello, I am Rawan<br><span>UI/ UX Designer</span></h2>
-          <h3>I design websites and mobile apps</h3>
-          <a href="Projects" class="main-botton">View my recent projects</a>
-
-          <!-- 
-          <div class="social-icons"> 
-            <a href="#" class="linkedin-link" target="_blank">
-              <i class="fab fa-linkedin"></i>
-              <span>Reach out to me through my LinkedIn profile</span>
-            </a>                  
-          </div> 
-          -->
-        </div>
-
-      </section>
+    </div>
+    
+    <div>
+        <h2>Hello, I am Rawan<br><span>UI/ UX Designer</span></h2>
+        <h3>I design websites and mobile apps</h3>
+        <a href="#projects" class="main-botton">View my recent projects</a>
+    </div>
+</section>
       
-
-<section class="cards" id="services">
+<!--Services Section-->
+<!--<section class="cards" id="services">
     <h2 class="title">Services</h2>
     <div class="content">
         <div class="card">
@@ -92,10 +125,252 @@
 
     </div>
 </section>
+-->
+<!--Projects Section-->
+<section class="projects-section">
+  <div class="container">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/La La Land Hero.png" alt="Project 1">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">La La Land Airport Mobile App</h3>
+          <p class="project-description">A user-friendly app to plan and track your travel itinerary with real-time weather updates.</p>
+          <p class="project-tags">UI/UX • Mobile App • Figma</p>
+        </div>
+      </div>
 
-<section class="projects" id="Projects">
-<h2 class="Top">Top projects I worked on</h2>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="project2.jpg" alt="Project 2">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">KAIA Website</h3>
+          <p class="project-description">A sleek, responsive personal portfolio built using HTML, CSS, and JavaScript.</p>
+          <p class="project-tags">Web Design • Frontend • HTML/CSS</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="project3.jpg" alt="Project 3">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Employee Internal Portal</h3>
+          <p class="project-description">An interactive dashboard for tracking customer data, activities, and insights.</p>
+          <p class="project-tags">UI Design • Dashboard • Figma</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+
+<!--About Section-->
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate UI/UX designer with a love for creating intuitive and beautiful digital experiences. From brainstorming wireframes to building prototypes, I enjoy every part of the creative journey.
+      </p>
+      <p>
+        I've worked on mobile apps, web platforms, and internal dashboards. My toolkit includes Figma, Adobe XD, and low-code tools like Power Apps.
+      </p>
+      <p class="about-tags">UI/UX • Design Systems • Mobile Apps • Web Design • Prototyping</p>
+      <button onclick="copyEmail()" class="icon-button">
+        <i class="fa-regular fa-paper-plane" style="margin-right: 7px;"></i>
+        Email me
+      </button>                 
+      <a href="assets/Files/Rawan Baabdullah CV.pdf" target="_blank" class="cv-btn">
+        <i class="fa-regular fa-file-alt" style="margin-right: 10px;"></i>
+        CV
+    </a>              
+    </div>
+    <div class="about-image">
+      <img src="assets/images//Rawan's-Profile-Picture.jpg" alt="About Me">
+    </div>
+  </div>
+</section>
+
+<!--Technical Skills-->
+<section class="technical-section" id="technical">
+  <div class="technical-container">
+    <h2>Bonus: Technical Features</h2>
+    <p class="technical-intro">Here are some of the technologies and tools I frequently use in my work:</p>
+
+    <div class="tech-grid">
+      <div class="tech-item">HTML5</div>
+      <div class="tech-item">CSS3</div>
+      <div class="tech-item">Figma</div>
+      <div class="tech-item">Power Apps</div>
+      <div class="tech-item">SharePoint</div>
+      <div class="tech-item">Power BI</div>
+      <div class="tech-item">Responsive Design</div>
+      <div class="tech-item">Low-code/No-code</div>
+      <div class="tech-item">Power Query</div>
+      <div class="tech-item">DAX</div>
+      <div class="tech-item">Power Automate</div>
+      <div class="tech-item">JRIA</div>
+    </div>
+  </div>
+</section>
+
+<!--Co-workers Recommendations-->
+<section class="testimonials-section" id="testimonials">
+  <div class="testimonials-container">
+    <h2>Workplace Endorsements</h2>
+    <p class="testimonials-intro">What people say about working with me:</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Mashallah rawan you have been amazing since the start, small tweaks or advices doesnt count to how intelligent you are and professional, keep up the hard work and wishing you the best in your career inshallah🙏🏼👌🏽”</p>
+        <div class="testimonial-author">
+          <img src="assets/images/HA.png" alt="Client Photo">
+          <div>
+            <p class="author-name">Hesham Amoudi</p>
+            <p class="author-title">Business Application Specialist, Jeddah Airports</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Rawan, your words are truly inspiring! 🌟 I'm so grateful to be part of this wonderful team. Every day spent with you and the team is an opportunity to grow and learn together. 💪 Here’s to an amazing year ahead filled with success and collaboration! 🚀.”</p>
+        <div class="testimonial-author">
+          <img src="assets/images/NA.png" alt="Client Photo">
+          <div>
+            <p class="author-name">Nadia Almarashi</p>
+            <p class="author-title">Application Developer, Jeddah Airports</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">“We are so happy to have you as part of our amazing team💛, Rawan! We wish you a very Happy New Year filled with more success!”</p>
+        <div class="testimonial-author">
+          <img src="assets/images/MA.png" alt="Client Photo">
+          <div>
+            <p class="author-name">Malak Alzahrani</p>
+            <p class="author-title">Business Application Specialist, Jeddah Airport</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Contact Section-->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <p class="contact-subtext">Got a project in mind or just want to say hello? Let’s connect!</p>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> rawankhaledba@gmail.com</p>
+      <p><strong>Phone:</strong> +966 54 090 0962</p>
+      <p><strong>Location:</strong> Jeddah, Saudi Arabia</p>
+    </div>
+  </div>
+</section>
+
+<!--Footer-->
+<footer class="footer">
+  <p>&copy; 2025 Rawan Baabdullah. All Rights Reserved.</p>
+</footer>
+
+<!--Scripts Section-->
+
+<!--Popper Effect-->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  const section = document.getElementById('testimonials');
+  
+  function launchConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 170,
+      origin: { y: 0.6 }
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          launchConfetti();
+        }
+      });
+    },
+    {
+      threshold: [0.9] // Trigger when 90% of the section is visible
+    }
+  );
+
+  observer.observe(section);
+</script>
+
+<!--Javascripts for Arrows-->
+
+<script>
+  const scrollContainer = document.getElementById('testimonial-scroll');
+  const scrollLeftBtn = document.querySelector('.scroll-left');
+  const scrollRightBtn = document.querySelector('.scroll-right');
+
+  scrollLeftBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -320, behavior: 'smooth' });
+  });
+
+  scrollRightBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: 320, behavior: 'smooth' });
+  });
+</script>
+
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace()
+</script>
 <script src="script/header-scroll.js"></script>
+<script>
+  function copyEmail() {
+    navigator.clipboard.writeText("rawankhaledba@gmail.com")
+      .then(() => alert("Email copied to clipboard!"))
+      .catch(err => alert("Failed to copy email"));
+  }
+
+  // Smooth Scroll to Services and Stop at the Center of the Screen
+  document.getElementById('servicesLink').addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default anchor behavior
+
+    const servicesSection = document.getElementById('services');
+    const sectionOffset = servicesSection.offsetTop;
+    const windowHeight = window.innerHeight;
+
+    // Calculate where the services section should be centered (middle of the screen)
+    const scrollToPosition = sectionOffset - (windowHeight / 2) + (servicesSection.offsetHeight / 2);
+
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: 'smooth'
+    });
+  });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.classList.add('gradient-section');
+        });
+    });
+</script>
 </body>
 </html>
