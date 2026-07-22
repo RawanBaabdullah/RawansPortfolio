@@ -1,0 +1,129 @@
+/* ===== Header (fluid + responsive) ===== */
+
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Fluid padding across sizes */
+  padding: clamp(10px, 2.2vw, 16px) clamp(16px, 5vw, 40px);
+
+  /* keep your rounded bottom */
+  border-radius: 0 0 10px 10px;
+  /* optional solid bg on small screens handled in media query */
+}
+
+.logo {
+  color: #D417BC;
+  font-size: clamp(18px, 2.4vw, 24px);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navigation {
+  display: flex;
+  gap: clamp(12px, 3vw, 30px);
+  /* allow wrapping if space is tight */
+  flex-wrap: wrap;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #242424;
+  font-weight: 400;
+  font-size: clamp(13px, 1.15vw, 14px);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1.3px;
+  background-color: #D417BC;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #D417BC;
+  font-weight: 400;
+}
+.navigation a:hover::after { opacity: 1; }
+
+.navigation a.active {
+  color: #D417BC;
+  font-weight: 500;
+}
+.navigation a.active::after { opacity: 1; }
+
+/* Hide-on-scroll effect you already had */
+.left-header.hide-on-scroll {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.left-header { transition: opacity 0.3s ease, transform 0.3s ease; }
+
+/* ===== Unified phones/tablets breakpoint ===== */
+@media (max-width: 768px) {
+  .top-header {
+    /* stack neatly on all phones */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    /* solid background helps over content */
+    background-color: #ffffff;
+  }
+
+  .navigation {
+    justify-content: flex-start;
+    gap: 18px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+}
+
+/* Respect iPhone notch safe area without affecting others */
+@supports (padding: env(safe-area-inset-top)) {
+  .top-header {
+    padding-top: calc(env(safe-area-inset-top) + clamp(10px, 2.2vw, 16px));
+  }
+}
+
+/* iPhone XS and smaller (≤ 375px) */
+@media (max-width: 375px) {
+  .top-header { padding: 12px 16px; }
+
+  .navigation{
+    gap: 14px;           /* tighten spacing */
+    flex-wrap: nowrap;   /* never wrap */
+  }
+
+  .navigation a{
+    font-size: 13px;   /* smaller than your clamp min */
+    white-space: nowrap; /* keep each label on one line */
+  }
+
+  .logo { font-size: 18px; } /* optional: shrink logo a bit too */
+}
+
+/* Very small phones (old iPhone SE / 320px) */
+@media (max-width: 340px) {
+  .navigation{ gap: 10px; }
+  .navigation a{ font-size: 13px; }
+}

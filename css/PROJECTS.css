@@ -1,0 +1,264 @@
+  /* Projects free source */
+  /* .slide-container{
+    max-width: 1120px;
+    width: 100%;
+    height: 620px;
+    padding: 40px 0;
+  } */
+
+  .slide-container {
+    max-width: 1110px;
+    width: 100%;
+    height:fit-content; /* let it adapt to hover scale */
+    padding: 40px 20px;
+    position: relative;
+    margin-bottom: 70px;
+  }
+  
+
+  /* .projects-text {
+    height: 6px;
+    width: 100px;
+    background-color: #D417BC;
+    border-radius: 4px;
+    margin: 0 auto 14px auto;
+  } */
+  
+  .projects-title {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #D417BC;
+    font-size: 32px;
+  }
+  
+  .projects-intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 16px;
+  }  
+  
+  .slide-content{
+    margin: 0 40px;
+    overflow:-moz-hidden-unscrollable;
+    position: relative;
+    border-radius: 0px;
+  }
+
+  .slide-container.card{
+    height: 600px;
+  }
+
+  .card {
+    border-radius: 20px;
+    height: 420px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.5s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.01);
+    /*box-shadow: 0 4px 40px rgba(175, 154, 237, 0.4);*/
+    box-shadow: 0 4px 40px rgba(122, 140, 217, 0.4);
+  }
+  
+  /* Image section - height reduced */
+  .card-image {
+    width: 100%;
+    height: 180px; /* ↓ reduced from 230px */
+    overflow: hidden;
+  }
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+  }
+  
+  /* Text section - tighter spacing */
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    padding: 16px 20px; /* ↓ reduced from 24px */
+    gap: 8px; /* ↓ slightly less vertical spacing */
+  }
+  
+  /* PROJECT label */
+  .card-content .project-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: #D417BC;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  
+  /* Title */
+  .card-content .name {
+    font-size: 16px; /* ↓ slightly smaller */
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  
+  /* Description */
+  .card-content .description {
+    font-size: 13px; /* ↓ smaller */
+    font-weight: 300;
+    text-align: justify;
+    color: #6e6e6e;
+    line-height: 1.4; /* ↓ reduced line height */
+  }
+  
+  /* Button - slightly more compact */
+  .button {
+    padding: 10px 10px 5px 10px; /* ↓ smaller padding */
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background-color: #D417BC;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+  }
+  .button:hover {
+    background-color: #b013a1;
+  }  
+  
+  .no-text-link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .swiper-navBtn{
+    color: #b114a0;
+    transition: color 0.3s ease;
+  }
+  .swiper-navBtn:hover{
+    color: #b114a0;
+  }
+  .swiper-navBtn::before,
+  .swiper-navBtn::after{
+    font-size: 35px;
+  }
+  .swiper-button-next{
+    right: 0;
+    margin-top: 39px;
+  }
+  .swiper-button-prev{
+    left: 0;
+    margin-top: 39px;
+  }
+  .swiper-pagination-bullet{
+    background-color: #c35fb6;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: #b114a0;
+  }
+
+  .modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-content p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* ✅ Feather icon color (lock) */
+/* Make feather icons pink inside the modal */
+.modal-content svg.feather {
+  stroke: #D417BC;   /* brand pink */
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
+
+  
+  /* ✅ Close button improvements */
+  .modal .close {
+    position: absolute;
+    top: 15px;
+    right: 16px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+  
+  .modal .close:hover {
+    color: #D417BC;
+  }
+  
+  .modal .close:focus-visible {
+    outline: 2px solid #D417BC;
+    outline-offset: 2px;
+  }
+  
+  
+  
+  @media screen and (max-width: 768px) {
+    .slide-container{
+      margin-bottom: 0px;
+    }
+    
+    .slide-content{
+      margin: 0 10px;
+    }
+    .swiper-navBtn{
+      display: none;
+    }
+
+    .card {
+      height: 455px;
+    }
+
+    .card-content .project-tag {
+        font-size: 14px;
+    }
+
+    .card-content .name{
+        font-size: 18px;
+    }
+
+    .card-content .description {
+        font-size: 14px;
+    }
+    
+  }

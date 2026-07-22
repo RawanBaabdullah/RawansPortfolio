@@ -1,0 +1,189 @@
+/* Animated Background */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .gradient-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.3;
+    mix-blend-mode: soft-light;
+  }
+  
+  .circle-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle at center, #af9aed, #fff6fe);
+    animation: moveCircle1 60s linear infinite;
+  }
+  
+  .circle-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at center, #c35fb6, #E2E7FF);
+    animation: moveCircle2 70s linear infinite;
+  }
+  
+  .circle-3 {
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle at center, #D417BC, #d9e7fa);
+    animation: moveCircle3 80s linear infinite;
+  }
+  
+  @keyframes moveCircle1 {
+    0% {
+        transform: translate(-50%, -50%);
+        left: -10%;
+        top: 100%;
+    }
+    50% {
+        transform: translate(-50%, -50%);
+        left: 110%;
+        top: 30%;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        left: -10%;
+        top: 100%;
+    }
+  }
+  
+  @keyframes moveCircle2 {
+    0% {
+        transform: translate(-50%, -50%);
+        left: 110%;
+        top: 20%;
+    }
+    50% {
+        transform: translate(-50%, -50%);
+        left: -10%;
+        top: 80%;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        left: 110%;
+        top: 20%;
+    }
+  }
+  
+  @keyframes moveCircle3 {
+    0% {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: -10%;
+    }
+    50% {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 110%;
+    }
+    100% {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: -10%;
+    }
+  }
+  
+  /* Gradient BG Animation */
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #fdfdfd, #fff6fe, #E2E7FF);
+    background-size: 200% 200%;
+    animation: bg 15s ease infinite;
+  }
+  
+  @keyframes bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Floating Bubbles */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.7;
+  }
+  
+  .b1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(#af9aed, transparent);
+    animation: float 45s infinite;
+    top: 20%;
+    left: 5%;
+  }
+  
+  .b2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(#c35fb6, transparent);
+    animation: float 50s infinite reverse;
+    top: 50%;
+    left: 25%;
+  }
+  
+  .b3 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(#d9e7fa, transparent);
+    animation: float 48s infinite;
+    top: 70%;
+    left: 70%;
+  }
+  
+  .b4 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(#E2E7FF, transparent);
+    animation: float 55s infinite;
+    top: 35%;
+    left: 50%;
+  }
+  
+  .b5 {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(#af9aed, transparent);
+    animation: float 52s infinite reverse;
+    top: 85%;
+    left: 30%;
+  }
+  
+  .b6 {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(#c35fb6, transparent);
+    animation: float 58s infinite;
+    top: 15%;
+    left: 80%;
+  }
+  
+  .b7 {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(#D417BC, transparent);
+    animation: float 62s infinite reverse;
+    top: 65%;
+    left: 10%;
+  }
+  
+  @keyframes float {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+  }

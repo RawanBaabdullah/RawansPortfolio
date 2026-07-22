@@ -1,0 +1,60 @@
+.technical-section {
+    padding: 100px 20px;
+  }
+  
+  .technical-container {
+    max-width: 1110px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .technical-section h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    color: #D417BC;
+  }
+  
+  .technical-intro {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  .tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .tech-item {
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .tech-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 40px rgba(149, 13, 132, 0.4);
+  }
+
+  @media screen and (max-width: 768px) {
+    .slide-container{
+      margin-bottom: 0px;
+    }
+
+    .tech-item {
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 14px;
+        color: #333;
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+      
+  } 

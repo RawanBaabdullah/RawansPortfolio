@@ -1,0 +1,13 @@
+:root {
+    --brand-pink: #D417BC;
+    --text-dark: #333;
+    --max-width: 1200px;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: var(--text-dark);
+  }
+  

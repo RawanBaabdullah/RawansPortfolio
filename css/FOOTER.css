@@ -1,0 +1,22 @@
+/*Footer*/
+.footer {
+    background-color: #D417BC;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer p {
+      font-size: 14px;
+    }
+  }
