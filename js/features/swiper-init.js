@@ -139,101 +139,116 @@
     updateArrowStates();
   });
 
+//SKILLS JS
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".matrix-tab-btn");
+  const cards = Array.from(document.querySelectorAll(".skill-card"));
+  const prevBtn = document.querySelector(".prev-matrix-btn");
+  const nextBtn = document.querySelector(".next-matrix-btn");
+  const pageIndicator = document.querySelector(".matrix-page-indicator");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const tabs = document.querySelectorAll(".matrix-tab-btn");
-    const cards = Array.from(document.querySelectorAll(".skill-card"));
-    const prevBtn = document.querySelector(".prev-matrix-btn");
-    const nextBtn = document.querySelector(".next-matrix-btn");
-    const pageIndicator = document.querySelector(".matrix-page-indicator");
-  
-    if (cards.length === 0) return;
-  
-    const CARDS_PER_PAGE = 4;
-    let currentCategory = "all";
-    let currentPage = 1;
-    let filteredCards = [];
-  
-    // 1. Core calculation system
-    function updatePagination() {
-      // Filter cards belonging to the active category
-      filteredCards = cards.filter(card => {
-        const cardCategory = card.getAttribute("data-category");
-        return currentCategory === "all" || cardCategory === currentCategory;
-      });
-  
-      const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE) || 1;
-      
-      // Ensure current page does not exceed bounds of a newly selected category
-      if (currentPage > totalPages) currentPage = totalPages;
-      if (currentPage < 1) currentPage = 1;
-  
-      // Toggle button active/inactive states
-      if (prevBtn) prevBtn.disabled = currentPage === 1;
-      if (nextBtn) nextBtn.disabled = currentPage === totalPages;
-  
-      // Render text output
-      if (pageIndicator) {
-        pageIndicator.textContent = `${currentPage} / ${totalPages}`;
-      }
-  
-      // Determine slice range for the page
-      const startIndex = (currentPage - 1) * CARDS_PER_PAGE;
-      const endIndex = startIndex + CARDS_PER_PAGE;
-  
-      // First, completely hide all cards from DOM layout flow
-      cards.forEach(card => {
-        card.style.display = "none";
-        card.classList.add("hidden");
-        card.classList.add("fade-out");
-      });
-  
-      // Display and fade-in only the active slice
-      filteredCards.forEach((card, index) => {
-        if (index >= startIndex && index < endIndex) {
-          card.style.display = "flex"; // Restores card visibility in grid layout
-          card.classList.remove("hidden");
-          
-          // Delay opacity release slightly to trigger fade-in entry transition
-          setTimeout(() => {
-            card.classList.remove("fade-out");
-          }, 30);
-        }
-      });
-    }
-  
-    // 2. Tab Navigation Listener
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-  
-        currentCategory = tab.getAttribute("data-category");
-        currentPage = 1; // Always reset to page 1 on category change
-        updatePagination();
-      });
+  if (cards.length === 0) return;
+
+  let currentCategory = "all";
+  let currentPage = 1;
+  let filteredCards = [];
+
+  // Responsive items per page (UX Best Practice)
+  function getCardsPerPage() {
+    return window.innerWidth <= 640 ? 2 : 4;
+  }
+
+  // 1. Core calculation system
+  function updatePagination() {
+    const CARDS_PER_PAGE = getCardsPerPage();
+
+    // Filter cards belonging to the active category
+    filteredCards = cards.filter(card => {
+      const cardCategory = card.getAttribute("data-category");
+      return currentCategory === "all" || cardCategory === currentCategory;
     });
-  
-    // 3. Arrow Click Listeners
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        if (currentPage > 1) {
-          currentPage--;
-          updatePagination();
-        }
-      });
+
+    const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE) || 1;
+
+    // Ensure current page does not exceed bounds of a newly selected category
+    if (currentPage > totalPages) currentPage = totalPages;
+    if (currentPage < 1) currentPage = 1;
+
+    // Toggle button active/inactive states
+    if (prevBtn) prevBtn.disabled = currentPage === 1;
+    if (nextBtn) nextBtn.disabled = currentPage === totalPages;
+
+    // Render text output
+    if (pageIndicator) {
+      pageIndicator.textContent = `${currentPage} / ${totalPages}`;
     }
-  
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE) || 1;
-        if (currentPage < totalPages) {
-          currentPage++;
-          updatePagination();
-        }
-      });
-    }
-  
-    // Initial Run
-    updatePagination();
+
+    // Determine slice range for the page
+    const startIndex = (currentPage - 1) * CARDS_PER_PAGE;
+    const endIndex = startIndex + CARDS_PER_PAGE;
+
+    // Hide all cards cleanly (removing inline display overrides)
+    cards.forEach(card => {
+      card.style.display = ""; // Reset inline display styles
+      card.classList.add("hidden");
+      card.classList.add("fade-out");
+    });
+
+    // Reveal only the active slice for this page
+    filteredCards.forEach((card, index) => {
+      if (index >= startIndex && index < endIndex) {
+        card.classList.remove("hidden");
+
+        // Small delay to trigger smooth CSS fade-in
+        setTimeout(() => {
+          card.classList.remove("fade-out");
+        }, 30);
+      }
+    });
+  }
+
+  // 2. Tab Navigation Listener
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      currentCategory = tab.getAttribute("data-category");
+      currentPage = 1; // Always reset to page 1 on category change
+      updatePagination();
+    });
   });
+
+  // 3. Arrow Click Listeners
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePagination();
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      const CARDS_PER_PAGE = getCardsPerPage();
+      const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE) || 1;
+      if (currentPage < totalPages) {
+        currentPage++;
+        updatePagination();
+      }
+    });
+  }
+
+  // 4. Handle window resize (Adjust card count dynamic on screen rotate/resize)
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      updatePagination();
+    }, 150);
+  });
+
+  // Initial Run
+  updatePagination();
+});

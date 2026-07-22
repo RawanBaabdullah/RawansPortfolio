@@ -16,3 +16,4 @@ import './utils/dom.js';
 
 // Initialize features that need explicit calls
 initHeaderScroll();
+
