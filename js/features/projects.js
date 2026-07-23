@@ -55,9 +55,12 @@ function renderProjects() {
     let actionButtonHTML = "";
     if (isLocked) {
       actionButtonHTML = `
-        <a href="#" class="button no-text-link" onclick="if(typeof showReportingModal === 'function'){ showReportingModal(event); } else { event.preventDefault(); alert('NDA Parameters active.'); }">
-          <i data-feather="lock"></i>
-        </a>
+        <div class="locked-btn-wrapper">
+          <span class="nda-tooltip">Confidential project — Case study restricted</span>
+          <button class="button no-text-link locked-btn" type="button" onclick="if(typeof showReportingModal === 'function'){ showReportingModal(event); } else { event.preventDefault(); }">
+            <i data-feather="lock"></i>
+          </button>
+        </div>
       `;
     } else {
       actionButtonHTML = `
