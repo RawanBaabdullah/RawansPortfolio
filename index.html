@@ -1359,6 +1359,83 @@
       background: var(--brand-pink);
       box-shadow: 0 10px 24px rgba(212, 23, 188, 0.15);
     }
+
+    /* In-Form Feedback Base */
+.form-feedback {
+  padding: 32px 24px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Success Card Style */
+.form-feedback.success-state {
+  background: rgba(212, 23, 188, 0.05);
+  border: 1px solid rgba(212, 23, 188, 0.2);
+}
+
+.feedback-content .feedback-icon {
+  font-size: 2.4rem;
+  color: #D417BC;
+  margin-bottom: 12px;
+}
+
+.feedback-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-main, #111);
+}
+
+.feedback-content p {
+  font-size: 0.92rem;
+  color: var(--text-muted, #666);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.reset-form-btn {
+  background: transparent;
+  border: 1px solid var(--text-main, #111);
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-form-btn:hover {
+  background: var(--text-main, #111);
+  color: #fff;
+}
+
+/* Error Banner Style */
+.form-feedback.error-state {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #dc2626;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+/* 1. Ensure the form wrapper uses standard top-to-bottom layout with controlled spacing */
+#form-fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Tightens space between all form fields */
+}
+
+/* 2. Standardize the gap above the submit button */
+.terminal-submit-btn {
+  margin-top: 8px; /* Reduces large empty gap above the button */
+  align-self: flex-start; /* Keeps the button neatly aligned to the left */
+}
+
+/* 3. Remove any bottom margin on the last field wrapper */
+.terminal-field:last-of-type {
+  margin-bottom: 0;
+}
   
     /* ==========================================================================
        10. SYSTEM FOOTER DESIGN
@@ -2136,7 +2213,7 @@
       
       <div class="interaction-load-zone">
         <button id="load-more-button" class="load-action-trigger">
-          <span>Request Next Data Row</span>
+          <span>See More Feedback</span>
           <i class="fa-solid fa-plus"></i>
         </button>
       </div>
@@ -2169,29 +2246,35 @@
             </div>
           </div>
         </div>
-
+    
         <div class="connect-form-terminal">
-          <form class="terminal-form-engine">
-            <div class="terminal-field">
-              <label for="name">Name / Company</label>
-              <input type="text" id="name" placeholder="E.g., Sarah Ahmed" required />
+          <form id="contact-form" class="terminal-form-engine" onsubmit="event.preventDefault(); sendMessage();">
+            <!-- In-Form Success / Error Banner Container -->
+            <div id="form-feedback" class="form-feedback" style="display: none;"></div>
+    
+            <!-- Form Input Fields Wrapper -->
+            <div id="form-fields-wrapper">
+              <div class="terminal-field">
+                <label for="name">Name / Company</label>
+                <input type="text" id="name" placeholder="E.g., Sarah Ahmed" required />
+              </div>
+              <div class="terminal-field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="name@company.com" required />
+              </div>
+              <div class="terminal-field">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Interface Design Project" required />
+              </div>
+              <div class="terminal-field">
+                <label for="message">Message Details</label>
+                <textarea id="message" placeholder="Outline scope details or pipeline timeline goals..." rows="5" required></textarea>
+              </div>
+              <button type="submit" class="terminal-submit-btn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-envelope"></i>
+              </button>
             </div>
-            <div class="terminal-field">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="name@company.com" required />
-            </div>
-            <div class="terminal-field">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" placeholder="Interface Design Project" required />
-            </div>
-            <div class="terminal-field">
-              <label for="message">Message Details</label>
-              <textarea id="message" placeholder="Outline scope details or pipeline timeline goals..." rows="5" required></textarea>
-            </div>
-            <button type="button" class="terminal-submit-btn" onclick="sendMessage();">
-              <span>Send Message</span>
-              <i class="fa-solid fa-envelope"></i>
-            </button>
           </form>
         </div>
       </div>

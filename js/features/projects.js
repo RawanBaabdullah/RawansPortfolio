@@ -56,7 +56,7 @@ function renderProjects() {
     if (isLocked) {
       actionButtonHTML = `
         <div class="locked-btn-wrapper">
-          <span class="nda-tooltip">Confidential project — Case study restricted</span>
+          <span class="nda-tooltip">Confidential project — Case </br> study restricted</span>
           <button class="button no-text-link locked-btn" type="button" onclick="if(typeof showReportingModal === 'function'){ showReportingModal(event); } else { event.preventDefault(); }">
             <i data-feather="lock"></i>
           </button>
