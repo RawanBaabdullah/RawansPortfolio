@@ -1,6 +1,5 @@
 // 1. إعدادات الاتصال بـ Supabase الخاصة بمشروعك
 const SUPABASE_URL = "https://dlakqmnpavhthwydqloy.supabase.co";
-// ⚠️ تذكير: ضعي هنا مفتاح الـ Publishable الكامـل (الذي يبدأ بـ sb_publishable_) وليس الـ secret key!
 const SUPABASE_ANON_KEY = "sb_publishable_xzywZAbIh9Vaju0OP4d-xw_r5f9nZbV"; 
 
 const cardContainer = document.getElementById("card-container");
@@ -18,9 +17,10 @@ function getAvatarColor(cardIndex) {
   return avatarColors[cardIndex % avatarColors.length];
 }
 
-// 2. دالة جلب البيانات من جدول Peer Feedback في Supabase
+// 2. دالة جلب البيانات من جدول Peer Feedback في Supabase (مرتبة بحسب display_order)
 async function fetchTestimonials() {
-  const API_URL = `${SUPABASE_URL}/rest/v1/Peer%20Feedback?select=*&order=id.asc`; 
+  // تم التحديث للترتيب بحسب display_order.asc بدلاً من id.asc
+  const API_URL = `${SUPABASE_URL}/rest/v1/Peer%20Feedback?select=*&order=display_order.asc`; 
   
   try {
     const response = await fetch(API_URL, {
@@ -47,7 +47,6 @@ function loadTestimonials() {
   
   const nextCards = testimonialsData.slice(currentIndex, currentIndex + cardsPerClick);
 
-  // هنا قمنا بإضافة الـ index داخل الـ forEach لتحديد الترتيب بدقة وتلافي أي خطأ
   nextCards.forEach((testimonial, index) => {
     const card = document.createElement("div");
     card.classList.add("feedback-card");
@@ -60,7 +59,7 @@ function loadTestimonials() {
       .slice(0, 2)
       .toUpperCase();
 
-    // حساب الترتيب الفعلي للبطاقة (حتى لو كانت في الصفحات التالية عند الضغط على Load More)
+    // حساب الترتيب الفعلي للبطاقة
     const absoluteIndex = currentIndex + index;
     const bgAvatarColor = getAvatarColor(absoluteIndex);
     
@@ -103,16 +102,17 @@ if (loadMoreButton) {
 }
 
 // ==========================================
-// 4. تأثير الـ Confetti Popper عند كل تمرير للقسم
+// 4. تأثير الـ Confetti Popper الأمثل للموبايل والأداء
 // ==========================================
 const section = document.getElementById('feedback');
 
-function launchConfetti() {
+function launchConfetti(isMobile) {
   if (typeof confetti === 'function') {
     confetti({
-      particleCount: 100,
-      spread: 170,
-      origin: { y: 0.6 }
+      particleCount: isMobile ? 50 : 100, // تقليل عدد الجسيمات للجوال لمنع التقطيع
+      spread: isMobile ? 80 : 160,
+      origin: { y: 0.6 },
+      disableForReducedMotion: true
     });
   } else {
     console.warn("Canvas Confetti library is not loaded.");
@@ -121,18 +121,15 @@ function launchConfetti() {
 
 if (section) {
   const isMobile = window.innerWidth <= 768;
-  let hasTriggered = false; // تتبع حالة التشغيل لمنع الفاير المزدوج أثناء التمرير البطيء
+  let hasTriggered = false; // لمنع التكرار المزعج وإجهاد المعالج على الجوال
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (!hasTriggered) {
-            launchConfetti();
-            hasTriggered = true; // نحدد أنه تم الإطلاق
-          }
-        } else {
-          hasTriggered = false; // عند الخروج من القسم، نعيد تعيين الحالة لتعمل المرة القادمة!
+        if (entry.isIntersecting && !hasTriggered) {
+          launchConfetti(isMobile);
+          hasTriggered = true; // يتم الإطلاق مرة واحدة فقط عند الوصول للقسم
+          observer.unobserve(section); // إزالة المراقبة تماماً للحفاظ على سلاسة الصفحة
         }
       });
     },
