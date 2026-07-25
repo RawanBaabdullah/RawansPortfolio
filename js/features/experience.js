@@ -67,16 +67,23 @@ function renderExperience(data) {
     }
 
     card.innerHTML = `
-      <div class="stream-meta">
-        <span class="stream-timeline">${item.timeline || ''}</span>
-        <span class="stream-org">${item.org || ''}</span>
+    <div class="stream-meta">
+      <div class="stream-org">
+        <div class="ui-icon-bubble">
+          <i class="fa-solid fa-building"></i>
+        </div>
+        <div>
+          <span class="org-name">${item.org || ''}</span>
+        </div>
       </div>
-      <h3 class="stream-position">${item.position || ''}</h3>
-      <p class="stream-summary">${item.summary || ''}</p>
-      <div class="stream-tags">
-        ${tagsHTML}
-      </div>
-    `;
+      <span class="stream-timeline">${item.timeline || ''}</span>
+    </div>
+    <h3 class="stream-position">${item.position || ''}</h3>
+    <p class="stream-summary">${item.summary || ''}</p>
+    <div class="stream-tags">
+      ${tagsHTML}
+    </div>
+  `;
     
     streamTrack.appendChild(card);
   });
